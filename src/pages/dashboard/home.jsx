@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Card,
@@ -29,88 +29,98 @@ import {
   statisticsChartsData,
   projectsTableData,
   ordersOverviewData,
-  
-  
 } from "@/data";
 
 export function Home() {
+  const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
+
+  const handleAvailableFundsClick = () => {
+    setIsFundsBelowThreshold(true);
+    const updatedTotalCardsData = [...totalCardsData];
+    updatedTotalCardsData[0].value = "RM2800.40";
+    setTotalCardsData(updatedTotalCardsData);
+  };
+
+  if(isFundsBelowThreshold){
+    document.getElementById("card1").childNodes[1].style.backgroundColor="#FBB786";
+  }
+
   return (
-
-  
     <div className="mt-12">
+      <div className="flex">
+        <div className="mb-12 max-w-lg mr-4">
+          {/* Card 1 */}
+          <div className="p-4" id="card1" onClick={handleAvailableFundsClick}> {/* Add onClick event handler to the wrapper div */}
+            <TotalCard
+              key={totalCardsData[0].title}
+              {...totalCardsData[0]}
+              title={totalCardsData[0].title}
+              icon={React.createElement(totalCardsData[0].icon, {
+                className: "w-8 h-8 text-white",
+              })}
+              footer={
+                <Typography className="font-normal text-blue-gray-600">
+                  <strong className={totalCardsData[1].footer.color}>
+                    {totalCardsData[1].footer.value}
+                  </strong>
+                  &nbsp;{totalCardsData[1].footer.label}
+                </Typography>
+              }
+              // className={`max-w-lg ${isFundsBelowThreshold ? "bg-orange-500" : ""}`}
+            />
+            {isFundsBelowThreshold && (
+              <Typography className="text-red-500 mt-2">
+                Your available funds are below the threshold. Please top up to prevent disruptions of corporate cards and benefits.
+              </Typography>
+            )}
+          </div>
+        </div>
 
-<div className="flex">
-  <div className="mb-12 max-w-lg mr-4">
-    {/* Card 1 */}
-    <div className="p-4">
-      <TotalCard
-        key={totalCardsData[0].title}
-        {...totalCardsData[0]}
-        title={totalCardsData[0].title}
-        icon={React.createElement(totalCardsData[0].icon, {
-          className: "w-8 h-8 text-white",
-        })}
-        footer={
-          <Typography className="font-normal text-blue-gray-600">
-            <strong className={totalCardsData[0].footer.color}>
-              {totalCardsData[0].footer.value}
-            </strong>
-            &nbsp;{totalCardsData[0].footer.label}
-          </Typography>
-        }
-        // Additional className to adjust card width
-        className="max-w-lg"
-      />
-    </div>
-  </div>
+        {/* Card 2 */}
+        <div className="mb-12 max-w-lg">
+          <div className="p-4">
+            <TotalCard
+              key={totalCardsData[1].title}
+              {...totalCardsData[1]}
+              title={totalCardsData[1].title}
+              icon={React.createElement(totalCardsData[1].icon, {
+                className: "w-8 h-8 text-white",
+              })}
+              footer={
+                <Typography className="font-normal text-blue-gray-600">
+                  <strong className={totalCardsData[1].footer.color}>
+                    {totalCardsData[1].footer.value}
+                  </strong>
+                  &nbsp;{totalCardsData[1].footer.label}
+                </Typography>
+              }
+              className="max-w-lg"
+            />
+          </div>
+        </div>
 
-  <div className="mb-12 max-w-lg">
-    {/* Card 2 */}
-    <div className="p-4">
-      <TotalCard
-        key={totalCardsData[1].title}
-        {...totalCardsData[1]}
-        title={totalCardsData[1].title}
-        icon={React.createElement(totalCardsData[1].icon, {
-          className: "w-8 h-8 text-white",
-        })}
-        footer={
-          <Typography className="font-normal text-blue-gray-600">
-            <strong className={totalCardsData[1].footer.color}>
-              {totalCardsData[1].footer.value}
-            </strong>
-            &nbsp;{totalCardsData[1].footer.label}
-          </Typography>
-        }
-        // Additional className to adjust card width
-        className="max-w-lg"
-      />
-    </div>
-  </div>
-  
-  <div className="mb-12 max-w-lg">
-  {/* Card 3 */}
-  <div className="p-4 custom-card">
-    <TotalCard
-      key={totalCardsData[2].title}
-      {...totalCardsData[2]}
-      title={totalCardsData[2].title}
-      icon={React.createElement(totalCardsData[2].icon, {
-        className: "w-8 h-8 text-white",
-      })}
-      footer={
-        <Typography className="font-normal text-blue-gray-600">
-          <strong className={totalCardsData[2].footer.color}>
-            {totalCardsData[2].footer.value}
-          </strong>
-          &nbsp;{totalCardsData[2].footer.label}
-        </Typography>
-      }
-      // Additional className to adjust card width
-      className="max-w-lg"
-    />
-  </div>
-</div>
+        {/* Card 3 */}
+        <div className="mb-12 max-w-lg">
+          <div className="p-4 custom-card">
+            <TotalCard
+              key={totalCardsData[2].title}
+              {...totalCardsData[2]}
+              title={totalCardsData[2].title}
+              icon={React.createElement(totalCardsData[2].icon, {
+                className: "w-8 h-8 text-white",
+              })}
+              footer={
+                <Typography className="font-normal text-blue-gray-600">
+                  <strong className={totalCardsData[2].footer.color}>
+                    {totalCardsData[2].footer.value}
+                  </strong>
+                  &nbsp;{totalCardsData[2].footer.label}
+                </Typography>
+              }
+              className="max-w-lg"
+            />
+          </div>
+        </div>
 
 
 
