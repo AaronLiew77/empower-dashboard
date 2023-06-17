@@ -57,8 +57,20 @@ import {
     {
       color: "blue",
       icon: BanknotesIcon,
-      title: "Expenses & Benefits claimed This Month",
-      value: "RM10,300.90",
+      title: "Total Expenses & Benefit Transaction Count",
+      value: "130",
+      footer: {
+        color: "text-green-500",
+        value: "+15%",
+        label: "than last week",
+      },
+    },
+
+    {
+      color: "blue",
+      icon: BanknotesIcon,
+      title: "Average Expenses & Benefit Value",
+      value: "RM130",
       footer: {
         color: "text-green-500",
         value: "+15%",

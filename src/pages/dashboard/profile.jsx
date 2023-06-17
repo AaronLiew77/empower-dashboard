@@ -68,18 +68,18 @@ export function Profile() {
     {/* Card 2 */}
     <div className="p-4">
       <TotalCard
-        key={totalCardsData[1].title}
-        {...totalCardsData[1]}
-        title={totalCardsData[1].title}
-        icon={React.createElement(totalCardsData[1].icon, {
+        key={totalCardsData[4].title}
+        {...totalCardsData[4]}
+        title={totalCardsData[4].title}
+        icon={React.createElement(totalCardsData[4].icon, {
           className: "w-8 h-8 text-white",
         })}
         footer={
           <Typography className="font-normal text-blue-gray-600">
-            <strong className={totalCardsData[1].footer.color}>
-              {totalCardsData[1].footer.value}
+            <strong className={totalCardsData[4].footer.color}>
+              {totalCardsData[4].footer.value}
             </strong>
-            &nbsp;{totalCardsData[1].footer.label}
+            &nbsp;{totalCardsData[4].footer.label}
           </Typography>
         }
         // Additional className to adjust card width
@@ -92,18 +92,18 @@ export function Profile() {
   {/* Card 3 */}
   <div className="p-4 custom-card">
     <TotalCard
-      key={totalCardsData[2].title}
-      {...totalCardsData[2]}
-      title={totalCardsData[2].title}
-      icon={React.createElement(totalCardsData[2].icon, {
+      key={totalCardsData[5].title}
+      {...totalCardsData[5]}
+      title={totalCardsData[5].title}
+      icon={React.createElement(totalCardsData[5].icon, {
         className: "w-8 h-8 text-white",
       })}
       footer={
         <Typography className="font-normal text-blue-gray-600">
-          <strong className={totalCardsData[2].footer.color}>
-            {totalCardsData[2].footer.value}
+          <strong className={totalCardsData[5].footer.color}>
+            {totalCardsData[5].footer.value}
           </strong>
-          &nbsp;{totalCardsData[2].footer.label}
+          &nbsp;{totalCardsData[5].footer.label}
         </Typography>
       }
       // Additional className to adjust card width
@@ -116,26 +116,7 @@ export function Profile() {
 
 </div>
 
-<h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Quick Actions</h1>
-  <br></br>
-      <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-        {statisticsCardsData.map(({ icon, title, footer, ...rest }) => (
-          <StatisticsCard
-            key={title}
-            {...rest}
-            title={title}
-            icon={React.createElement(icon, {
-              className: "w-6 h-6 text-white",
-            })}
-            footer={
-              <Typography className="font-normal text-blue-gray-600">
-                <strong className={footer.color}>{footer.value}</strong>
-                &nbsp;{footer.label}
-              </Typography>
-            }
-          />
-        ))}
-      </div>
+
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Charts & Analysis</h1>
       <br></br>
