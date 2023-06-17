@@ -38,7 +38,7 @@ export const routes = [
       },
       {
         icon: <CurrencyDollarIcon {...icon} />,
-        name: "Funds",
+        name: "Spending Limit",
         path: "/notifactions",
         element: <Notifications />,
       },
