@@ -28,6 +28,32 @@ const websiteViewsChart = {
   },
 };
 
+const requestApproveChart = {
+  type: "bar",
+  height: 220,
+  series: [
+    {
+      name: "Approved",
+      data: [500, 200, 410, 222, 450, 110, 440],
+    },
+  ],
+  options: {
+    ...chartsConfig,
+    colors: "#4B80F7",
+    plotOptions: {
+      bar: {
+        columnWidth: "16%",
+        borderRadius: 7,
+      },
+    },
+    xaxis: {
+      ...chartsConfig.xaxis,
+      categories: ["JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY"],
+    },
+  },
+};
+
+
 const dailySalesChart = {
   type: "line",
   height: 220,
@@ -89,7 +115,7 @@ export const statisticsChartsData = [
     title: "Request Approved",
     description: "Employee request approved",
     footer: "just updated",
-    chart: completedTasksChart,
+    chart: requestApproveChart,
   },
 ];
 

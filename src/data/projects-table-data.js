@@ -1,3 +1,13 @@
+import {
+  BanknotesIcon,
+  UserPlusIcon,
+  UserIcon,
+  ChartBarIcon,
+  CreditCardIcon,
+  PencilIcon,
+} from "@heroicons/react/24/solid";
+
+
 export const projectsTableData = [
   {
     img: "/img/petronas-logo-png.png",
@@ -8,6 +18,8 @@ export const projectsTableData = [
     ],
     budget: "Petrol Allowance",
     completion: 60,
+    action: "EDIT",
+
   },
   {
     img: "/img/logo-atlassian.svg",
@@ -18,6 +30,8 @@ export const projectsTableData = [
     ],
     budget: "Gym Membership",
     completion: 10,
+    action: "EDIT",
+
   },
   {
     img: "/img/petronas-logo-png.png",
@@ -27,6 +41,8 @@ export const projectsTableData = [
     ],
     budget: "Petrol Allowance",
     completion: 100,
+    action: "EDIT",
+
   },
   {
     img: "/img/logo-spotify.svg",
@@ -37,6 +53,8 @@ export const projectsTableData = [
     ],
     budget: "Entertainment",
     completion: 50,
+    action: "EDIT",
+
   },
   {
     img: "/img/logo-jira.svg",
@@ -44,6 +62,8 @@ export const projectsTableData = [
     members: [{ img: "/img/team-4.jpeg", name: "Alexander Smith" }],
     budget: "Flexi",
     completion: 25,
+    action: "EDIT",
+
   },
   {
     img: "/img/logo-invision.svg",
@@ -53,6 +73,7 @@ export const projectsTableData = [
     ],
     budget: "Flexi",
     completion: 40,
+    action: "EDIT",
   },
 ];
 

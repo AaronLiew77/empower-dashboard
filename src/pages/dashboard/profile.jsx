@@ -26,6 +26,7 @@ import { StatisticsChart } from "@/widgets/charts";
 import {
   totalCardsData,
   statisticsCardsData,
+  historicChartsData,
   statisticsChartsData,
   projectsTableData,
   ordersOverviewData,
@@ -38,6 +39,9 @@ export function Profile() {
 
   
     <div className="mt-12">
+
+<h1 style={{ fontSize: '250%', fontWeight: 'bold' }}>Expenses & Benefit</h1>
+<h2 style={{ fontSize: '150%', fontWeight: 'bold' }}>Category: All</h2>
 
 <div className="flex">
   <div className="mb-12 max-w-lg mr-4">
@@ -118,11 +122,11 @@ export function Profile() {
 
 
 
-      <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Charts & Analysis</h1>
+      <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Historic Trends</h1>
       <br></br>
       <br></br>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-        {statisticsChartsData.map((props) => (
+        {historicChartsData.map((props) => (
           <StatisticsChart
             key={props.title}
             {...props}
@@ -139,7 +143,7 @@ export function Profile() {
         ))}
       </div>
 
-      <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Recent Transactions</h1>
+      <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Recent Transactions in Category</h1>
       <br></br>
       <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
         <Card className="overflow-hidden xl:col-span-2">
@@ -182,7 +186,7 @@ export function Profile() {
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
-                  {["Transactions", "Employee", "Category", "Amount"].map(
+                  {["Transactions", "Employee", "Category", "Amount", "Action"].map(
                     (el) => (
                       <th
                         key={el}
@@ -201,7 +205,7 @@ export function Profile() {
               </thead>
               <tbody>
                 {projectsTableData.map(
-                  ({ img, name, members, budget, completion }, key) => {
+                  ({ img, name, members, budget, completion, action }, key) => {
                     const className = `py-3 px-5 ${
                       key === projectsTableData.length - 1
                         ? ""
@@ -261,6 +265,14 @@ export function Profile() {
                             />
                           </div>
                         </td>
+                        <td className={className}>
+                          <Typography
+                            variant="small"
+                            className="cursor-pointer text-xs font-medium text-red-500"
+                          >
+                            {action}
+                          </Typography>
+                        </td>
                       </tr>
                     );
                   }
@@ -269,63 +281,7 @@ export function Profile() {
             </table>
           </CardBody>
         </Card>
-        <Card>
-          <CardHeader
-            floated={false}
-            shadow={false}
-            color="transparent"
-            className="m-0 p-6"
-          >
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              Overview
-            </Typography>
-            <Typography
-              variant="small"
-              className="flex items-center gap-1 font-normal text-blue-gray-600"
-            >
-              <ArrowUpIcon
-                strokeWidth={3}
-                className="h-3.5 w-3.5 text-green-500"
-              />
-              <strong>24%</strong> this month
-            </Typography>
-          </CardHeader>
-          <CardBody className="pt-0">
-            {ordersOverviewData.map(
-              ({ icon, color, title, description }, key) => (
-                <div key={title} className="flex items-start gap-4 py-3">
-                  <div
-                    className={`relative p-1 after:absolute after:-bottom-6 after:left-2/4 after:w-0.5 after:-translate-x-2/4 after:bg-blue-gray-50 after:content-[''] ${
-                      key === ordersOverviewData.length - 1
-                        ? "after:h-0"
-                        : "after:h-4/6"
-                    }`}
-                  >
-                    {React.createElement(icon, {
-                      className: `!w-5 !h-5 ${color}`,
-                    })}
-                  </div>
-                  <div>
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="block font-medium"
-                    >
-                      {title}
-                    </Typography>
-                    <Typography
-                      as="span"
-                      variant="small"
-                      className="text-xs font-medium text-blue-gray-500"
-                    >
-                      {description}
-                    </Typography>
-                  </div>
-                </div>
-              )
-            )}
-          </CardBody>
-        </Card>
+        
       </div>
     </div>
   );
