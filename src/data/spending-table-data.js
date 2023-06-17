@@ -17,31 +17,31 @@ import {
     },
     {
         allowance: "Gym & Health",
-        limit: "RM200.00",
+        limit: "RM150.00",
         action: "EDIT",
   
     },
     {
         allowance: "Flexi",
-        limit: "RM200.00",
+        limit: "RM300.00",
         action: "EDIT",
   
     },
     {
         allowance: "Travel",
-        limit: "RM200.00",
+        limit: "RM100.00",
         action: "EDIT",
   
     },
     {
         allowance: "Mobile",
-        limit: "RM200.00",
+        limit: "RM100.00",
         action: "EDIT",
   
     },
     {
         allowance: "Development",
-        limit: "RM200.00",
+        limit: "RM100.00",
         action: "EDIT",
     },
   ];

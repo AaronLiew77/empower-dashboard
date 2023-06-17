@@ -16,7 +16,7 @@ export const statisticsCardsData = [
     color: "blue",
     icon: UserPlusIcon,
     title: "",
-    value: "Add New Employee",
+    value: "Add New\nEmployee",
     footer: {
       color: "text-green-500",
       value: "",

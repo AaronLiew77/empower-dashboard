@@ -25,7 +25,7 @@ import {
       value: "RM10,300.90",
       footer: {
         color: "text-green-500",
-        value: "+15%",
+        value: "+3%",
         label: "than last week",
       },
     },
@@ -37,7 +37,7 @@ import {
       value: "2",
       footer: {
         color: "text-green-500",
-        value: "+15%",
+        value: "+2%",
         label: "than last week",
       },
     },

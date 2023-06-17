@@ -198,7 +198,9 @@ export function Notifications() {
             </table>
             <br></br>
             <Button fullWidth>Add New Card</Button>
-    
+            <br></br>
+            <Button fullWidth color="red">Delete Card</Button>
+
         </CardBody>
       </Card>
       

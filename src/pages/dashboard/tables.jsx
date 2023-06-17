@@ -92,9 +92,9 @@ export function Tables() {
                         <Typography
                           as="a"
                           href="#"
-                          className="text-xs font-semibold text-blue-gray-600"
-                        >
-                          Edit
+                          className="cursor-pointer text-xs font-medium text-red-500"
+                          >
+                          EDIT
                         </Typography>
                       </td>
                     </tr>

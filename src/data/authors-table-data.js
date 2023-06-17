@@ -12,7 +12,7 @@ export const authorsTableData = [
     name: "Alexa Liras",
     email: "alexa@stanchart.com",
     job: ["Gym Membership", "Mid Valley"],
-    online: "1234",
+    online: "3431",
     date: "RM66.50",
   },
   {
@@ -20,7 +20,7 @@ export const authorsTableData = [
     name: "Laurent Perrier",
     email: "laurent@stanchart.com",
     job: ["Petronas", "Jalan Kuchai"],
-    online: "1234",
+    online: "6721",
     date: "RM99.00",
   },
   {
