@@ -42,6 +42,32 @@ import {
       },
     },
 
+    {
+      color: "blue",
+      icon: BanknotesIcon,
+      title: "Expenses & Benefits claimed This Month",
+      value: "RM10,300.90",
+      footer: {
+        color: "text-green-500",
+        value: "+15%",
+        label: "than last week",
+      },
+    },
+
+    {
+      color: "blue",
+      icon: BanknotesIcon,
+      title: "Expenses & Benefits claimed This Month",
+      value: "RM10,300.90",
+      footer: {
+        color: "text-green-500",
+        value: "+15%",
+        label: "than last week",
+      },
+    },
+
+
+
 
   ];
   
