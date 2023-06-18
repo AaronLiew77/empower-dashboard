@@ -20,10 +20,8 @@ import {
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
 import { TotalCard } from "@/widgets/cards";
-
-import StackedBarChart from '../../components/StackedBarChart';
-import BarChart from '../../components/BarChart';
-
+import StackedBarChart from "@/components/StackedBarChart";
+import BarChart from "@/components/BarChart";
 
 import { StatisticsChart } from "@/widgets/charts";
 import {
@@ -33,7 +31,6 @@ import {
   ordersOverviewData,
 } from "@/data";
 
-<<<<<<< Updated upstream
 import {
   UserPlusIcon,
   ChartBarIcon,
@@ -42,9 +39,6 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { Link } from "react-router-dom";
-=======
-
->>>>>>> Stashed changes
 
 export function Home() {
   const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
@@ -192,7 +186,6 @@ export function Home() {
       <br></br>
       <br></br>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-
         {/* {statisticsChartsData.map((props) => (
           <StatisticsChart
             key={props.title}
@@ -208,20 +201,17 @@ export function Home() {
             }
           />
         ))} */}
-      <div>
-      <h1>Allowance Data</h1>
-      <StackedBarChart />
+        <div>
+          <h1>Currency Data</h1>
+          <BarChart />
+        </div>
+        <div>
+          <h1>Allowance Data</h1>
+          <StackedBarChart />
+        </div>
+
+
       </div>
-      <div>
-      <h1>Expenditure History</h1>
-      <BarChart />
-      </div>
-
-      </div> 
-      
-
-
-
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Recent Transactions</h1>
       <br></br>
