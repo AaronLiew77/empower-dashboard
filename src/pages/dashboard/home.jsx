@@ -223,6 +223,7 @@ export function Home() {
                 <strong>Latest transactions</strong> updated 5s ago
               </Typography>
             </div>
+            
             <Menu placement="left-start">
               <MenuHandler>
                 <IconButton size="sm" variant="text" color="blue-gray">
@@ -240,7 +241,10 @@ export function Home() {
               </MenuList>
             </Menu>
           </CardHeader>
+
+
           <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+          <a href="./profile">
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
@@ -329,7 +333,9 @@ export function Home() {
                 )}
               </tbody>
             </table>
+          </a>
           </CardBody>
+
         </Card>
         <Card>
           <CardHeader
