@@ -31,6 +31,15 @@ import {
   ordersOverviewData,
 } from "@/data";
 
+import {
+  BanknotesIcon,
+  UserPlusIcon,
+  UserIcon,
+  ChartBarIcon,
+  CreditCardIcon,
+  PencilIcon,
+} from "@heroicons/react/24/solid";
+
 export function Home() {
   const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
 
@@ -129,22 +138,45 @@ export function Home() {
 <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Quick Actions</h1>
   <br></br>
       <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-        {statisticsCardsData.map(({ icon, title, footer, ...rest }) => (
-          <StatisticsCard
-            key={title}
-            {...rest}
-            title={title}
-            icon={React.createElement(icon, {
-              className: "w-6 h-6 text-white",
-            })}
-            footer={
-              <Typography className="font-normal text-blue-gray-600">
-                <strong className={footer.color}>{footer.value}</strong>
-                &nbsp;{footer.label}
-              </Typography>
-            }
-          />
-        ))}
+        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+          <div className="w-1/5"> 
+          <UserPlusIcon className="h-6 w-6 text-[#1965BF]" />
+          </div>
+          <div className="w-4/5">
+            <p className="text-[#1965BF] font-semibold">Add New Employee</p>
+          </div>
+
+        </div>
+
+        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+          <div className="w-1/5"> 
+          <CreditCardIcon className="h-6 w-6 text-[#1965BF]" />
+          </div>
+          <div className="w-4/5">
+            <p className="text-[#1965BF] font-semibold">Add New Card</p>
+          </div>
+
+        </div>
+
+        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+          <div className="w-1/5"> 
+          <PencilIcon className="h-6 w-6 text-[#1965BF]" />
+          </div>
+          <div className="w-4/5">
+            <p className="text-[#1965BF] font-semibold">Adjust Benefits</p>
+          </div>
+
+        </div>
+
+        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+          <div className="w-1/5"> 
+          <ChartBarIcon className="h-6 w-6 text-[#1965BF]" />
+          </div>
+          <div className="w-4/5">
+            <p className="text-[#1965BF] font-semibold">Top Up Funds</p>
+          </div>
+
+        </div>
       </div>
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Charts & Analysis</h1>
