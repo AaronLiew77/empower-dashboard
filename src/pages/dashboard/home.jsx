@@ -19,26 +19,24 @@ import {
   EllipsisVerticalIcon,
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
-import { StatisticsCard } from "@/widgets/cards";
 import { TotalCard } from "@/widgets/cards";
 
 import { StatisticsChart } from "@/widgets/charts";
 import {
   totalCardsData,
-  statisticsCardsData,
   statisticsChartsData,
   projectsTableData,
   ordersOverviewData,
 } from "@/data";
 
 import {
-  BanknotesIcon,
   UserPlusIcon,
-  UserIcon,
   ChartBarIcon,
   CreditCardIcon,
   PencilIcon,
 } from "@heroicons/react/24/solid";
+
+import { Link } from "react-router-dom";
 
 export function Home() {
   const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
@@ -158,6 +156,7 @@ export function Home() {
 
         </div>
 
+        <Link to='/dashboard/notifactions'>
         <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
           <div className="w-1/5"> 
           <PencilIcon className="h-6 w-6 text-[#1965BF]" />
@@ -167,6 +166,8 @@ export function Home() {
           </div>
 
         </div>
+          </Link>
+        
 
         <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
           <div className="w-1/5"> 
