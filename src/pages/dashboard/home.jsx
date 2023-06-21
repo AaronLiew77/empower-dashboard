@@ -20,6 +20,8 @@ import {
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
 import { TotalCard } from "@/widgets/cards";
+import StackedBarChart from "@/components/StackedBarChart";
+import BarChart from "@/components/BarChart";
 
 import { StatisticsChart } from "@/widgets/charts";
 import {
@@ -145,7 +147,7 @@ export function Home() {
       <br></br>
       <br></br>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-        {statisticsChartsData.map((props) => (
+        {/* {statisticsChartsData.map((props) => (
           <StatisticsChart
             key={props.title}
             {...props}
@@ -159,7 +161,17 @@ export function Home() {
               </Typography>
             }
           />
-        ))}
+        ))} */}
+        <div>
+          <h1>Currency Data</h1>
+          <BarChart />
+        </div>
+        <div>
+          <h1>Allowance Data</h1>
+          <StackedBarChart />
+        </div>
+
+
       </div>
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Recent Transactions</h1>
@@ -184,6 +196,7 @@ export function Home() {
                 <strong>Latest transactions</strong> updated 5s ago
               </Typography>
             </div>
+            
             <Menu placement="left-start">
               <MenuHandler>
                 <IconButton size="sm" variant="text" color="blue-gray">
@@ -201,7 +214,10 @@ export function Home() {
               </MenuList>
             </Menu>
           </CardHeader>
+
+
           <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+          <a href="./profile">
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
@@ -290,7 +306,9 @@ export function Home() {
                 )}
               </tbody>
             </table>
+          </a>
           </CardBody>
+
         </Card>
         <Card>
           <CardHeader

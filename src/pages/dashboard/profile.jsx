@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { StatisticsCard } from "@/widgets/cards";
 import { TotalCard } from "@/widgets/cards";
+import StackedBarChart from '../../components/StackedBarChart';
 
 import { StatisticsChart } from "@/widgets/charts";
 import {
@@ -126,7 +127,7 @@ export function Profile() {
       <br></br>
       <br></br>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-        {historicChartsData.map((props) => (
+        {/* {historicChartsData.map((props) => (
           <StatisticsChart
             key={props.title}
             {...props}
@@ -140,7 +141,11 @@ export function Profile() {
               </Typography>
             }
           />
-        ))}
+        ))} */}
+        <div>
+      <h1>Historical Trends</h1>
+      <StackedBarChart />
+      </div>
       </div>
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Recent Transactions in Category</h1>
