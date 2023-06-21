@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Typography,
   Card,
@@ -40,12 +40,19 @@ import { Link } from "react-router-dom";
 
 export function Home() {
   const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
+  const [availableFunds, setAvailableFunds] = useState("RM 20,800.40");
+  const [cardBackgroundColor, setCardBackgroundColor] = useState("bg-[#2B69F5]");
+
 
   const handleAvailableFundsClick = () => {
     setIsFundsBelowThreshold(true);
-    const updatedTotalCardsData = [...totalCardsData];
-    updatedTotalCardsData[0].value = "RM2800.40";
-    setTotalCardsData(updatedTotalCardsData);
+    // const updatedTotalCardsData = [...totalCardsData];
+    // updatedTotalCardsData[0].value = "RM2800.40";
+    // setTotalCardsData(updatedTotalCardsData);
+
+    setAvailableFunds("RM 2800.40");
+    setCardBackgroundColor("bg-[#FBB786]")
+
   };
 
   if(isFundsBelowThreshold){
@@ -54,84 +61,38 @@ export function Home() {
 
   return (
     <div className="mt-12">
-      <div className="flex">
-        <div className="mb-12 max-w-lg mr-4">
-          {/* Card 1 */}
-          <div className="p-4" id="card1" onClick={handleAvailableFundsClick}> {/* Add onClick event handler to the wrapper div */}
-            <TotalCard
-              key={totalCardsData[0].title}
-              {...totalCardsData[0]}
-              title={totalCardsData[0].title}
-              icon={React.createElement(totalCardsData[0].icon, {
-                className: "w-8 h-8 text-white",
-              })}
-              footer={
-                <Typography className="font-normal text-blue-gray-600">
-                  <strong className={totalCardsData[1].footer.color}>
-                    {totalCardsData[1].footer.value}
-                  </strong>
-                  &nbsp;{totalCardsData[1].footer.label}
-                </Typography>
-              }
-              // className={`max-w-lg ${isFundsBelowThreshold ? "bg-orange-500" : ""}`}
-            />
+      <div className="flex w-3/5 my-8 items-stretch">
+        <div className="w-2/3 pr-8">
+          {/* Blue card */}
+          <div className={`flex flex-col ${cardBackgroundColor} p-8 rounded-lg`} onClick={handleAvailableFundsClick}>
+            <div className="flex">
+            <div className="w-1/2">
+              <p className="text-white text-xl font-bold">Available Funds</p>
+              <p className="text-white text-3xl font-bold mt-3">{availableFunds}</p>
+            </div>
+            <div className="w-1/2">
+              <p className="text-white text-xl font-bold">Expense & Benefits Claimed This Month </p>
+              <p className="text-white text-3xl font-bold mt-3">RM 10,300.90</p>
+            </div>
+            </div>
+            <div>
             {isFundsBelowThreshold && (
               <Typography className="text-red-500 mt-2">
                 Your available funds are below the threshold. Please top up to prevent disruptions of corporate cards and benefits.
               </Typography>
             )}
+            </div>
           </div>
         </div>
-
-        {/* Card 2 */}
-        <div className="mb-12 max-w-lg">
-          <div className="p-4">
-            <TotalCard
-              key={totalCardsData[1].title}
-              {...totalCardsData[1]}
-              title={totalCardsData[1].title}
-              icon={React.createElement(totalCardsData[1].icon, {
-                className: "w-8 h-8 text-white",
-              })}
-              footer={
-                <Typography className="font-normal text-blue-gray-600">
-                  <strong className={totalCardsData[1].footer.color}>
-                    {totalCardsData[1].footer.value}
-                  </strong>
-                  &nbsp;{totalCardsData[1].footer.label}
-                </Typography>
-              }
-              className="max-w-lg"
-            />
+        {/* Purple card */}
+        <div className="w-1/3 pr-8">
+          <div className="flex flex-col justify-center items-center bg-[#C297EC] p-8 rounded-lg">
+            <p className="text-white text-3xl font-bold">2</p>
+            <p className="text-white text-xl font-bold mt-3">Available Request</p>
+            <button className="px-4 py-2 bg-[#2B69F5] text-white text-sm rounded-full mt-6">See Pending Request</button>
           </div>
         </div>
-
-        {/* Card 3 */}
-        <div className="mb-12 max-w-lg">
-          <div className="p-4 custom-card">
-            <TotalCard
-              key={totalCardsData[2].title}
-              {...totalCardsData[2]}
-              title={totalCardsData[2].title}
-              icon={React.createElement(totalCardsData[2].icon, {
-                className: "w-8 h-8 text-white",
-              })}
-              footer={
-                <Typography className="font-normal text-blue-gray-600">
-                  <strong className={totalCardsData[2].footer.color}>
-                    {totalCardsData[2].footer.value}
-                  </strong>
-                  &nbsp;{totalCardsData[2].footer.label}
-                </Typography>
-              }
-              className="max-w-lg"
-            />
-          </div>
-        </div>
-
-
-
-</div>
+      </div>
 
 <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Quick Actions</h1>
   <br></br>
