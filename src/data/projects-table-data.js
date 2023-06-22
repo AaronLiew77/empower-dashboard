@@ -5,6 +5,7 @@ import {
   ChartBarIcon,
   CreditCardIcon,
   PencilIcon,
+  TrashIcon,
 } from "@heroicons/react/24/solid";
 
 
@@ -18,7 +19,7 @@ export const projectsTableData = [
     ],
     budget: "Petrol Allowance",
     completion: 60,
-    action: "EDIT",
+    action: TrashIcon,
 
   },
   {
@@ -30,7 +31,7 @@ export const projectsTableData = [
     ],
     budget: "Gym Membership",
     completion: 10,
-    action: "EDIT",
+    action: TrashIcon,
 
   },
   {
@@ -41,7 +42,7 @@ export const projectsTableData = [
     ],
     budget: "Petrol Allowance",
     completion: 100,
-    action: "EDIT",
+    action: TrashIcon,
 
   },
   {
@@ -53,7 +54,7 @@ export const projectsTableData = [
     ],
     budget: "Entertainment",
     completion: 50,
-    action: "EDIT",
+    action: TrashIcon,
 
   },
   {
@@ -62,7 +63,7 @@ export const projectsTableData = [
     members: [{ img: "/img/team-4.jpeg", name: "Alexander Smith" }],
     budget: "Flexi",
     completion: 25,
-    action: "EDIT",
+    action: TrashIcon,
 
   },
   {
@@ -73,7 +74,7 @@ export const projectsTableData = [
     ],
     budget: "Flexi",
     completion: 40,
-    action: "EDIT",
+    action: TrashIcon,
   },
 ];
 
