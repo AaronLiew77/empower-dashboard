@@ -19,7 +19,7 @@ import {
   Progress,
   } from "@material-tailwind/react";
 import RadialBarChart from '../../components/RadialChart';
-
+import EmployeeSlide from '../../components/EmployeeSlide';
 
 import "../../../public/css/main.css"
 
@@ -203,7 +203,7 @@ export function Notifications() {
 
         </CardBody>
       </Card>
-      
+      <EmployeeSlide />
     </>
     
   );
