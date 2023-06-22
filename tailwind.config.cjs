@@ -9,6 +9,7 @@ module.exports = withMT({
       backgroundColor: {
         'custom-color': '#BEC6ED',
         'sidenav-font-color': '#1965BF',
+        'secondaryColor': '#1965BF'
       },
 
 
