@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 .flexi-container {
     display: flex;
     justify-content: center;

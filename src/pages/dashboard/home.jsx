@@ -48,18 +48,10 @@ export function Home() {
 
   const handleAvailableFundsClick = () => {
     setIsFundsBelowThreshold(true);
-    // const updatedTotalCardsData = [...totalCardsData];
-    // updatedTotalCardsData[0].value = "RM2800.40";
-    // setTotalCardsData(updatedTotalCardsData);
-
     setAvailableFunds("RM 2800.40");
     setCardBackgroundColor("bg-[#FBB786]")
 
   };
-
-  if(isFundsBelowThreshold){
-    document.getElementById("card1").childNodes[1].style.backgroundColor="#FBB786";
-  }
 
   return (
     <div className="mt-12">
