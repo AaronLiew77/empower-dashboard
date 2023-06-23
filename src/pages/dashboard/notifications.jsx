@@ -184,7 +184,6 @@ export function Notifications() {
        
       </div>
       {/* Bottom Graphs */}
-
       {showSlide && (
         <EmployeeSlide
           onClose={setSlideFalse}
