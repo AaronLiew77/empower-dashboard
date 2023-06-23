@@ -22,7 +22,7 @@ import {
 
 import { FlagIcon, TrashIcon } from "@heroicons/react/24/solid";
 import DashboardSlider from '../../components/DashboardSlider';
-
+import HorizontalChart from '../../components/HorizontalChart';
 
 
 import { TotalCard } from "@/widgets/cards";
@@ -55,6 +55,13 @@ export function Home() {
   const [cardBackgroundColor, setCardBackgroundColor] = useState("bg-[#2B69F5]");
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showSlide, setshowSlide] = useState(false);
+  const chartData = [
+    {label: 'Petrol Allowance' , value : 40, allowance_used : 100, allowance_limit : 220},
+    {label: 'Marketing Tools' , value : 55, allowance_used  : 200, allowance_limit : 400},
+    {label: 'Flexi Benefits' , value : 80, allowance_used : 150, allowance_limit : 180},
+    {label: 'Health & Gym' , value : 40, allowance_used  : 100, allowance_limit : 220},
+  ]
+
 
   const handleSlideMenu = (name) => {
     setSelectedEmployee(name)
@@ -81,11 +88,11 @@ export function Home() {
       <div className="flex w-full 3xl:w-3/5 my-8 items-stretch">
         <div className="w-2/3 pr-8">
           {/* Blue card */}
-          <div className={`flex flex-col ${cardBackgroundColor} p-8 rounded-lg`} onClick={handleAvailableFundsClick}>
+          <div className={`flex flex-col ${cardBackgroundColor} p-8 h-full rounded-lg`} onClick={handleAvailableFundsClick}>
             <div className="flex">
               <div className="w-1/2">
                 <p className="text-white text-xl font-bold">Available Funds</p>
-                <p className="text-white text-3xl font-bold mt-3">{availableFunds}</p>
+                <p className="text-white text-3xl font-bold mt-11">{availableFunds}</p>
               </div>
               <div className="w-1/2">
                 <p className="text-white text-xl font-bold">Expense & Benefits Claimed This Month </p>
@@ -102,8 +109,8 @@ export function Home() {
           </div>
         </div>
         {/* Purple card */}
-        <div className="w-1/3 pr-8">
-          <div className="flex flex-col justify-center items-center bg-[#C297EC] p-8 rounded-lg">
+        <div className="w-1/3 pr-8 h-full">
+          <div className="flex flex-col justify-center items-center bg-[#C297EC] p-5 rounded-lg">
             <p className="text-white text-3xl font-bold">2</p>
             <p className="text-white text-xl font-bold mt-3">Available Request</p>
             <button className="px-4 py-2 bg-[#2B69F5] text-white text-sm rounded-full mt-6">See Pending Request</button>
@@ -113,8 +120,8 @@ export function Home() {
 
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Quick Actions</h1>
       <br></br>
-      <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+      <div className="mb-12 grid gap-y-4 gap-x-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="bg-[#D8F1FF] p-4 flex items-center rounded-lg">
           <div className="w-1/5">
             <UserPlusIcon className="h-6 w-6 text-[#1965BF]" />
           </div>
@@ -124,22 +131,22 @@ export function Home() {
 
         </div>
 
-        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
-          <div className="w-1/5">
+        <div className="bg-[#D8F1FF] flex  items-center p-4 rounded-lg ">
+          <div className="w-1/5 ">
             <CreditCardIcon className="h-6 w-6 text-[#1965BF]" />
           </div>
           <div className="w-4/5">
-            <p className="text-[#1965BF] font-semibold">Add New Card</p>
+            <p className="text-[#1965BF] font-semibold ">Add New Card</p>
           </div>
 
         </div>
 
         <Link to='/dashboard/notifactions'>
-          <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+          <div className="bg-[#D8F1FF] flex items-center p-4 rounded-lg ">
             <div className="w-1/5">
-              <PencilIcon className="h-6 w-6 text-[#1965BF]" />
+              <PencilIcon className="h-6 w-6  text-[#1965BF]" />
             </div>
-            <div className="w-4/5">
+            <div className="w-4/5 ">
               <p className="text-[#1965BF] font-semibold">Adjust Benefits</p>
             </div>
 
@@ -147,12 +154,12 @@ export function Home() {
         </Link>
 
 
-        <div className="bg-[#D8F1FF] flex p-6 rounded-lg">
+        <div className="bg-[#D8F1FF] flex items-center p-4 rounded-lg ">
           <div className="w-1/5">
             <ChartBarIcon className="h-6 w-6 text-[#1965BF]" />
           </div>
           <div className="w-4/5">
-            <p className="text-[#1965BF] font-semibold">Top Up Funds</p>
+            <p className="text-[#1965BF] font-semibold ">Top Up Funds</p>
           </div>
 
         </div>
@@ -178,13 +185,18 @@ export function Home() {
           />
         ))} */}
         <div>
-          <h1>Currency Data</h1>
+          <h1>Expenditure History</h1>
           <BarChart />
         </div>
         <div>
-          <h1>Allowance Data</h1>
+          <h1>Benefits Claimed By Category</h1>
           <StackedBarChart />
         </div>
+        <div>
+          <h1>Budget & Benefits Utilization</h1>
+          <HorizontalChart data ={chartData}/>
+        </div>
+
 
 
       </div>
