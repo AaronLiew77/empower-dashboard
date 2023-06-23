@@ -2,12 +2,12 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function DashboardSlider() {
+export default function DashboardSlider({employeeName, onClose}) {
     const [open, setOpen] = useState(true)
 
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={setOpen}>
+            <Dialog as="div" className="relative z-10" onClose={onClose}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -46,7 +46,7 @@ export default function DashboardSlider() {
                                             <button
                                                 type="button"
                                                 className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                                                onClick={() => setOpen(false)}
+                                                onClick={() => onClose}
                                             >
                                                 <span className="sr-only">Close panel</span>
                                                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -56,7 +56,7 @@ export default function DashboardSlider() {
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl rounded-3xl">
                                         <div className="px-4 sm:px-6">
                                             <Dialog.Title style={{ fontSize: '1.5em' }} className="text-base font-semibold leading-6 text-gray-900">
-                                                Employee Information
+                                                Employee Information: {employeeName}
                                             </Dialog.Title>
                                         </div>
                                         <div className="rounded-lg bg-gray-200 px-4 py-2 mx-4 mt-4">
