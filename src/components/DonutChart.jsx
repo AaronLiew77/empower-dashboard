@@ -15,17 +15,22 @@ const DonutChart = ({ data }) => {
     markers: {
       fillColors: ['#FFFFFF'], // Set legend marker fill color to white
     },
+   
     labels: data.labels,
     dataLabels: {
       enabled: true,
       formatter: function (val, opts) {
         return opts.w.config.labels[opts.seriesIndex] + ': ' + val + '%';
       },
+
       style: {
-        fontSize: '14px',
-        colors: ['#C6E6FB'],
+        fontSize: '12px',
+        colors: ['#000000'],
         borderColor: ['#333333'],
         strokeColors: ['#333333'],
+      },
+      dropShadow: {
+        enabled: false,
       },
       offsetX: 20, // Increase the horizontal offset
       offsetY: 20 // Increase the vertical offset

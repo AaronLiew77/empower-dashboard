@@ -196,27 +196,27 @@ export function Notifications() {
                       <div className="flex">
                         <div className="text-md pr-12">
                           <div>
-                            <p>Grab Taxi</p>
-                            <p className="text-xs">9:41 am</p>
+                            <p>Celebrity Fitness</p>
+                            <p className="text-xs">9:41P.M.</p>
                           </div>
 
                           <div className="pt-8">
-                            <p>Grab Taxi</p>
-                            <p className="text-xs">9:41 am</p>
+                            <p>Shell Petrol</p>
+                            <p className="text-xs">10:14A.M.</p>
                           </div>
 
                           <div className="pt-8">
-                            <p>Grab Taxi</p>
-                            <p className="text-xs">9:41 am</p>
+                            <p>Netflix</p>
+                            <p className="text-xs">2:14PP.M.</p>
                           </div>
                         </div>
 
                         <div className="flex">
                           <div className="pr-12">
-                            <div>
-                              <p className="text-md text-white"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
+                            <div className="">
+                              <p className="text-md text-white"><span className="bg-[#56ccf2] rounded-md pt-1 pb-1 pl-2 pr-2">Gym Allowance</span></p>
                               <p className="text-md text-white pt-12"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
-                              <p className="text-md text-white pt-12"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
+                              <p className="text-md text-white pt-12"><span className="bg-[#56ccf2] rounded-md pt-1 pb-1 pl-2 pr-2">Flexi Allowance</span></p>
                             </div>
                           </div>
                         </div>
