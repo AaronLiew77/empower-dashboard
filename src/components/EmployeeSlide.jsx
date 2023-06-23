@@ -1,8 +1,9 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function EmployeeSlide({onClose}) {
+import DonutChart from "./DonutChart";
+
+export default function EmployeeSlide({onCloseGiven, chartDataGiven}) {
   const [open, setOpen] = useState(true)
   const [dropDown, setdropDown] = useState(false)
 
@@ -20,7 +21,7 @@ export default function EmployeeSlide({onClose}) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
+      <Dialog as="div" className="relative z-10" onClose={onCloseGiven}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -59,7 +60,7 @@ export default function EmployeeSlide({onClose}) {
                       <button
                         type="button"
                         className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                        onClick={() => onClose}
+                        onClick={onCloseGiven}
                       >
                         <span className="sr-only">Close panel</span>
                       </button>
@@ -97,11 +98,36 @@ export default function EmployeeSlide({onClose}) {
                             </span>
                         </p>
 
-                        <div className="mt-5">
-                            <p className='mr-4 text-[#1965BF] inline-block'>Simple label</p>
-                            <input className="border rounded-lg text-lg inline-block" style={{borderColor: "#2B69F5"}} type="text" />
+                        <div className="">
+                          <DonutChart data={chartDataGiven} />
                         </div>
 
+                        <div className="mt-8">
+                            <p className=' text-[#1965BF] inline-block'>Simple label</p>
+                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                        </div>
+                        <div className="mt-8">
+                            <p className=' text-[#1965BF] inline-block'>Marketing Tool</p>
+                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                        </div>
+                        <div className="mt-8">
+                            <p className=' text-[#1965BF] inline-block'>Flexi Benefits</p>
+                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                        </div>
+                        <div className="mt-8">
+                            <p className=' text-[#1965BF] inline-block'>Health & Gym</p>
+                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                        </div>
+                        <div className="mt-8">
+                            <p className=' text-[#1965BF] inline-block'>Health & Gym</p>
+                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                        </div>
+
+                        <div className="mt-5 inline-block w-full">
+                          <button onClick={onCloseGiven} className='bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl float-right'>Edit Spending Limit</button>
+                        </div>
+
+                      
                     </div>
                   </div>
                 </Dialog.Panel>
