@@ -306,12 +306,11 @@ export function Home() {
               </tbody>
             </table>
 
-            {showSlide && (
               <DashboardSlider
+                open={showSlide}
                 employeeName={selectedEmployee}
                 onClose={setSlideFalse}
               />
-            )}
           </CardBody>
         </Card>
 
