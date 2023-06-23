@@ -183,12 +183,11 @@ export function Notifications() {
        
       </div>
       {/* Bottom Graphs */}
-      {showSlide && (
         <EmployeeSlide
+          open={showSlide}
           onCloseGiven={setSlideFalse}
           chartDataGiven={donutData}
         />
-        )}
     </>
     
   );

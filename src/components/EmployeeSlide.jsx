@@ -3,8 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 
 import DonutChart from "./DonutChart";
 
-export default function EmployeeSlide({onCloseGiven, chartDataGiven}) {
-  const [open, setOpen] = useState(true)
+export default function EmployeeSlide({open, onCloseGiven, chartDataGiven}) {
   const [dropDown, setdropDown] = useState(false)
 
   function dropButton(){
