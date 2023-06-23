@@ -56,10 +56,10 @@ export function Home() {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showSlide, setshowSlide] = useState(false);
   const chartData = [
-    {label: 'Petrol Allowance' , value : 40, allowance_used : 100, allowance_limit : 220},
-    {label: 'Marketing Tools' , value : 55, allowance_used  : 200, allowance_limit : 400},
-    {label: 'Flexi Benefits' , value : 80, allowance_used : 150, allowance_limit : 180},
-    {label: 'Health & Gym' , value : 40, allowance_used  : 100, allowance_limit : 220},
+    {label: 'Petrol Allowance' , value : 40, allowance_used : 10000, allowance_limit : 25000},
+    {label: 'Marketing Tools' , value : 50, allowance_used  : 6000, allowance_limit : 12000},
+    {label: 'Flexi Benefits' , value : 80, allowance_used : 8000, allowance_limit : 10000},
+    {label: 'Health & Gym' , value : 40, allowance_used  : 3200, allowance_limit : 8000},
   ]
 
 
@@ -165,9 +165,8 @@ export function Home() {
         </div>
       </div>
 
-      <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Charts & Analysis</h1>
-      <br></br>
-      <br></br>
+      
+      
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
         {/* {statisticsChartsData.map((props) => (
           <StatisticsChart
@@ -185,15 +184,15 @@ export function Home() {
           />
         ))} */}
         <div>
-          <h1>Expenditure History</h1>
+          <h1 class = "text-lg font-bold mb-6 mt-2">Expenditure History</h1>
           <BarChart />
         </div>
         <div>
-          <h1>Benefits Claimed By Category</h1>
+          <h1 class = "text-lg font-bold mb-6 mt-2">Benefits Claimed By Category</h1>
           <StackedBarChart />
         </div>
         <div>
-          <h1>Budget & Benefits Utilization</h1>
+          <h1 class = "text-lg font-bold  mt-2">Budget & Benefits Utilization</h1>
           <HorizontalChart data ={chartData}/>
         </div>
 
