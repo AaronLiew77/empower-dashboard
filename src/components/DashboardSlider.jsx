@@ -1,7 +1,11 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function DashboardSlider({employeeName, onClose}) {
+import {
+    BellIcon,
+} from "@heroicons/react/24/solid";
+
+export default function DashboardSlider({ employeeName, onClose }) {
     const [open, setOpen] = useState(true)
 
     return (
@@ -54,13 +58,38 @@ export default function DashboardSlider({employeeName, onClose}) {
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl rounded-3xl">
                                         <div className="px-4 sm:px-6">
                                             <Dialog.Title style={{ fontSize: '1.5em' }} className="text-base font-semibold leading-6 text-gray-900">
-                                                Employee Information: {employeeName}
+                                                Employee Information
                                             </Dialog.Title>
                                         </div>
-                                        <div className="rounded-lg bg-gray-200 px-4 py-2 mx-4 mt-4">
+                                        <div className="rounded-lg bg-white-200 px-4 py-4 mx-4 mt-4 flex items-center">
+                                            <div className="w-24 h-24 rounded-full overflow-hidden ml-4">
+                                                <img src="/img/nazran.jpg" alt="Profile Picture" className="w-full h-full object-cover" />
+                                            </div>
+
+                                            <div className="mx-4 mt-3">
+                                                <h2 className="text-lg font-semibold">Khairul Nazran</h2>
+                                                <p className="text-sm text-gray-600">Engineering - Corporate Engineer</p>
+                                                <p className="text-sm text-gray-600">Employee since 21 October 2021</p>
+                                                <button
+                                                    className="bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-3 rounded-full mt-4 text-sm flex items-center"
+                                                    style={{ backgroundColor: '#C297EC' }}
+                                                >
+                                                    <BellIcon className="w-10 h-10 mr-1" />
+                                                    1 Pending request from this employee
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                        <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl rounded-3xl mt-4">
+                                            <div className="px-4 sm:px-6">
+                                                <Dialog.Title style={{ fontSize: '1.5em' }} className="text-base font-semibold leading-6 text-gray-900">
+                                                    Expenses and Benefits Utilization
+                                                </Dialog.Title>
+                                            </div>
                                         </div>
 
                                     </div>
+
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
