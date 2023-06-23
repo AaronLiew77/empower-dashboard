@@ -24,7 +24,7 @@ import HorizontalChart from '../../components/HorizontalChart';
 import DonutChart from "../../components/DonutChart";
 
 import "../../../public/css/main.css"
-
+import React, { useEffect, useState } from "react";
 
 import {
   HomeIcon,
@@ -64,13 +64,25 @@ export function Notifications() {
     series: [30, 25, 10, 15, 20],
     labels: ['Platform', 'Liquidity', 'Team', 'Marketing', 'Sale']
   };
+
+  const [showSlide, setshowSlide] = useState(false);
+  const handleSlideMenu = (name) => {
+    setSelectedEmployee(name)
+    
+    setshowSlide(!showSlide)
+    console.log("run handle")
+  };
+
+  const setSlideFalse = () => {
+    setSelectedEmployee(null)
+
+    setshowSlide(false)
+    console.log("run false handle")
+  }
   
-
-
   return (
     <>
     
-      
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Employee details - Khairul Nazran</h1>
 
       {/* Top card */}
@@ -171,15 +183,13 @@ export function Notifications() {
         
        
       </div>
-
       {/* Bottom Graphs */}
 
-      
-      
-     
-      
-    
-      <EmployeeSlide />
+      {showSlide && (
+        <EmployeeSlide
+          onClose={setSlideFalse}
+        />
+        )}
     </>
     
   );
