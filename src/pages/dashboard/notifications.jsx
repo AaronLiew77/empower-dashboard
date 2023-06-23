@@ -169,13 +169,16 @@ export function Notifications() {
 
           </div>
 
-          <div className="">
-          <p className="font-bold text-xl">Spending Limits</p>
-          <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
-          <div className="pl-6">
-            <DonutChart data={donutData} />
-          </div>
-          <button className="mt-5 bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl" onClick={handleSlideMenu}>Edit Spending Limit</button>
+          <div>
+            <p className="font-bold text-xl">Spending Limits</p>
+            <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
+            <div className="pl-6">
+              <DonutChart data={donutData} />
+            </div>
+
+            <div className="mt-5 inline-block w-full">
+              <button onClick={handleSlideMenu} className='bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl float-right' >Edit Spending Limit</button>
+            </div>
           </div>
         </div>
 
