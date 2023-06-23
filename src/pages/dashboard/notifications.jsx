@@ -61,8 +61,8 @@ export function Notifications() {
   ];
 
   const donutData = {
-    series: [30, 25, 10, 15, 20],
-    labels: ['Platform', 'Liquidity', 'Team', 'Marketing', 'Sale']
+    series: [27, 18, 41, 14],
+    labels: ['Petrol Allowance', 'Marketing Tools', 'Flexi Benefits', 'Health & Gym']
   };
 
   const [showSlide, setshowSlide] = useState(false);
