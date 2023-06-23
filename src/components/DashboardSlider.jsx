@@ -70,6 +70,8 @@ export default function DashboardSlider({open, employeeName, onClose}) {
                                                 <h2 className="text-lg font-semibold">Khairul Nazran</h2>
                                                 <p className="text-sm text-gray-600">Engineering - Corporate Engineer</p>
                                                 <p className="text-sm text-gray-600">Employee since 21 October 2021</p>
+
+                                                <a href='/dashboard/notifactions'>
                                                 <button
                                                     className="bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-3 rounded-full mt-4 text-sm flex items-center"
                                                     style={{ backgroundColor: '#C297EC' }}
@@ -77,6 +79,7 @@ export default function DashboardSlider({open, employeeName, onClose}) {
                                                     <BellIcon className="w-10 h-10 mr-1" />
                                                     1 Pending request from this employee
                                                 </button>
+                                                </a>
                                             </div>
 
                                         </div>
@@ -137,21 +140,21 @@ export default function DashboardSlider({open, employeeName, onClose}) {
                                                             <tbody>
                                                                 <tr
                                                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                                    <td class="whitespace-nowrap px-6 py-4">Grab Taxi <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
-                                                                    <td class="whitespace-nowrap px-6 py-4">Transport Allowance</td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Celebrity Fitness <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Gym Allowance</td>
                                                                     <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM23.40</td>
                                                                 </tr>
                                                                 <tr
                                                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                                    <td class="whitespace-nowrap px-6 py-4">Grab Taxi <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
-                                                                    <td class="whitespace-nowrap px-6 py-4">Transport Allowance</td>
-                                                                    <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM23.40</td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Shell Petrol <br></br> <span className='text-sm font-light text-gray-500'>10:14A.M.</span></td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Petrol Allowance</td>
+                                                                    <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM50.00</td>
                                                                 </tr>
                                                                 <tr
                                                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                                    <td class="whitespace-nowrap px-6 py-4">Grab Taxi <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
-                                                                    <td class="whitespace-nowrap px-6 py-4">Transport Allowance</td>
-                                                                    <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM23.40</td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Netflix <br></br> <span className='text-sm font-light text-gray-500'>2:14P.M.</span></td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Flexi Allowance</td>
+                                                                    <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM49.40</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
