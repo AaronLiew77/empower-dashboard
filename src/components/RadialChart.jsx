@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 
-const RadialBarChart = ({ chartData, label, color='#FF4560' }) => {
+const RadialBarChart = ({ chartData, label, color='#FF4560', height='170' }) => {
   // Options for the chart
   const chartOptions = {
     chart: {
@@ -76,7 +76,7 @@ const RadialBarChart = ({ chartData, label, color='#FF4560' }) => {
       options={chartOptions}
       series={chartData}
       type="radialBar"
-      height="170"
+      height={height}
     />
   );
 };

@@ -20,6 +20,8 @@ import {
   } from "@material-tailwind/react";
 import RadialBarChart from '../../components/RadialChart';
 import EmployeeSlide from '../../components/EmployeeSlide';
+import HorizontalChart from '../../components/HorizontalChart';
+import DonutChart from "../../components/DonutChart";
 
 import "../../../public/css/main.css"
 
@@ -51,141 +53,132 @@ import {
 } from "@/data";
 export function Notifications() {
   const chartData=[70]
+  const data = [
+    { label: 'Petrol Allowance', value: 60 },
+    { label: 'Marketing Tools', value: 40 },
+    { label: 'Flexi Benefits', value: 90 },
+    { label: 'Health & Gym', value: 30 },
+  ];
+
+  const donutData = {
+    series: [30, 25, 10, 15, 20],
+    labels: ['Platform', 'Liquidity', 'Team', 'Marketing', 'Sale']
+  };
+  
+
+
   return (
     <>
     
+      
       <h1 style={{ fontSize: '150%', fontWeight: 'bold' }}>Employee details - Khairul Nazran</h1>
-      <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url(https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80)] bg-cover	bg-center">
-        <div className="absolute inset-0 h-full w-full bg-blue-500/50" />
-      </div>
-      <Card className="mx-3 -mt-16 mb-6 lg:mx-4">
-        <CardBody className="p-4">
-          <div className="mb-10 flex items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <Avatar 
-                src="/img/nazran.jpg"
-                alt="bruce-mars"
-                size="xl"
-                className="rounded-lg shadow-lg shadow-blue-gray-500/40"
-              />
-              <div>
-                <Typography variant="h5" color="blue-gray" className="mb-1">
-                  Khairul Nazran
-                </Typography>
-                <Typography
-                  variant="small"
-                  className="font-normal text-blue-gray-600"
-                >
-                  Engineering - Coorporate Banking
-                </Typography>
+
+      {/* Top card */}
+      <div>
+        <div className="flex flex-col pt-8 items-stretch pr-20">
+          <div className="flex space-x-8">
+            <div className="w-1/3 border border-[#5C97F0]  rounded-lg">
+              <div className="flex flex-col p-3">
+                <div className="flex">
+                  <div className="w-1/3 pr-4">
+                  <img src="/img/nazran.jpg"></img>
+                  </div>
+                  <div>
+                  <p className="text-xl font-bold">Khairul Nazran</p>
+                  <div className="text-xs pt-4 text-blue-gray-600">
+                    
+                    <p>Engineering</p>
+                    <p>Corporate Banking</p>
+
+                    <p className="pt-3">Employee since</p>
+                    <p>21 October 2021</p>
+
+                    <p className="font-bold text-sm pt-4 text-black">Benefit Type: Flexi Level 2</p>
+                  </div>
+                  </div>
+                </div>
               </div>
             </div>
             
-          </div>  
-          
-          <Card className="mt-6 w-96" style={{ backgroundColor: '#72A8F9', width: '50%', height: '30%' }}>
-            <CardBody>
-              <div className="flex">
-                <div>
-                  <Typography variant="h5" color="white" className="mb-2">
-                    Basic Empower Card
-                  </Typography>
-                  <Typography color="white">
-                    Card Number: 0000-3333-2222-1234
-                    <br />
-                    Expiry Date: 07/29
-                    <br />
-                    Utilized: RM321.00
-                    <br />
-                    Card Limit: RM1000.00
-                  </Typography>
+            <div className="w-2/3 bg-[#5C97F0]  rounded-lg pr-8">
+              <div className="flex flex-col p-3">
+                <div className="flex">
+                  <div>
+                    <p className="text-white font-bold text-xl">Basic EmpowerCard</p>
+
+
+                    <div className="flex flex-col pr-3 text-white">
+                      <div className="flex">
+                      <div className="text-sm pt-4 pr-4">
+                        <p>Card Number</p>
+                        <p className="font-thin">1234 1234 1234 1234</p>
+
+                        <div className="pt-8">
+                        <p>Expired</p>
+                        <p className="font-thin">07/28</p>
+                        </div>
+
+                      </div>
+
+                      <div className="pt-4 text-sm">
+                        <div>
+                          <p>Utilized</p>
+                          <p className="font-thin">RM 321.00</p>
+                        </div>
+
+                        <div className="pt-8">
+                        <p>Card Limit</p>
+                        <p className="font-thin">RM 1000.00</p>
+                        </div> 
+
+                      </div>
+                      </div>                    
+                    </div>
+                  </div>
+                  <div className="">
+                  <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5' height="200"/>
+                  </div>
                 </div>
-                <div>
-                {/* <img src="/img/radialgraph.png" alt="Radial Chart"/> */}
-                <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5'/>
-                </div>
+
               </div>
-              
 
+            </div>
 
+          </div>
 
-            </CardBody>
-          
-          </Card>
-          <br></br>
-          <table className="w-full min-w-[640px] table-auto"> 
-              <thead>
-                <tr>
-                  {["Allowances", "Limit", "Action"].map(
-                    (el) => (
-                      <th
-                        key={el}
-                        className="border-b border-blue-gray-50 py-3 px-6 text-left"
-                      >
-                        <Typography
-                          variant="small"
-                          className="text-[11px] font-medium uppercase text-blue-gray-400"
-                        >
-                          {el}
-                        </Typography>
-                      </th> 
-                    )
-                  )}
-                </tr>
-              </thead>
-              <tbody>
-                {spendingTableData.map(
-                  ({allowance, limit, action }, key) => {
-                    const className = `py-3 px-5 ${
-                      key === spendingTableData.length - 1
-                        ? ""
-                        : "border-b border-blue-gray-50"
-                    }`;
+        </div>
+      </div>
 
-                    return (
-                      <tr key={name}>
-                        <td className={className}>
-                          <div className="flex items-center gap-4">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className="font-bold"
-                            >
-                              {allowance}
-                            </Typography>
-                          </div>
-                        </td>
-                        
-                        <td className={className}>
-                          <Typography
-                            variant="small"
-                            className="text-xs font-medium text-blue-gray-600"
-                          >
-                            {limit}
-                          </Typography>
-                        </td>
-                        
-                        <td className={className}>
-                          <Typography
-                            variant="small"
-                            className="cursor-pointer text-xs font-medium text-red-500"
-                          >
-                            {action}
-                          </Typography>
-                        </td>
-                      </tr>
-                    );
-                  }
-                )}
-              </tbody>
-            </table>
-            <br></br>
-            <Button fullWidth>Add New Card</Button>
-            <br></br>
-            <Button fullWidth color="red">Delete Card</Button>
+      <div className=" flex flex-col pt-8 items-stretch">
+        <div className="flex">
+          <div className="w-1/2"> 
+            <p className="font-bold text-xl">Utilization Breadown</p>
+            <div className="pr-8">
+              <HorizontalChart data={data}/>
+            </div>
+           
 
-        </CardBody>
-      </Card>
+          </div>
+           <div className="">
+            <p className="font-bold text-xl">Spending Limits</p>
+            <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
+            <div className="pl-6">
+            <DonutChart data={donutData} />
+            </div>
+          </div>
+        </div>
+
+        
+       
+      </div>
+
+      {/* Bottom Graphs */}
+
+      
+      
+     
+      
+    
       <EmployeeSlide />
     </>
     
