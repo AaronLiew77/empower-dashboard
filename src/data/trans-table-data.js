@@ -15,7 +15,7 @@ import {
       img: "/img/petronas-logo-png.png",
       name: "PETRONAS Jalan Ampang",
       members: [
-        { img: "/img/team-1.jpeg", name: "Romina Hadid" },
+        { img: "/img/nazran.jpg", name: "Khairul Nazran" },
         
       ],
       budget: "Petrol Allowance",

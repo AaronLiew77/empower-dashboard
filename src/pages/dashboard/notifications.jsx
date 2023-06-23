@@ -169,26 +169,103 @@ export function Notifications() {
 
           </div>
 
-          <div className="">
-          <p className="font-bold text-xl">Spending Limits</p>
-          <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
-          <div className="pl-6">
-            <DonutChart data={donutData} />
-          </div>
-          <button className="mt-5 bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl" onClick={handleSlideMenu}>Edit Spending Limit</button>
+          <div>
+            <p className="font-bold text-xl">Spending Limits</p>
+            <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
+            <div className="pl-6">
+              <DonutChart data={donutData} />
+            </div>
+
+            <div className="mt-5 inline-block w-full">
+              <button onClick={handleSlideMenu} className='bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl float-right' >Edit Spending Limit</button>
+            </div>
           </div>
         </div>
-
-        
-       
       </div>
-      {/* Bottom Graphs */}
-      {showSlide && (
+
+     
+
+    
+
+          <div className="flex flex-col">
+                <div className="flex pt-8">
+                  <div className="w-1/2">
+                    <p className="font-bold text-xl">Recent Transactions</p>
+
+                    <div className="flex flex-col pt-4">
+                      <div className="flex">
+                        <div className="text-md pr-12">
+                          <div>
+                            <p>Grab Taxi</p>
+                            <p className="text-xs">9:41 am</p>
+                          </div>
+
+                          <div className="pt-8">
+                            <p>Grab Taxi</p>
+                            <p className="text-xs">9:41 am</p>
+                          </div>
+
+                          <div className="pt-8">
+                            <p>Grab Taxi</p>
+                            <p className="text-xs">9:41 am</p>
+                          </div>
+                        </div>
+
+                        <div className="flex">
+                          <div className="pr-12">
+                            <div>
+                              <p className="text-md text-white"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
+                              <p className="text-md text-white pt-12"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
+                              <p className="text-md text-white pt-12"><span className="bg-[#56ccf2] rounded-md p-1">Petrol Allowance</span></p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex">
+                          <div className=" text-red-500">
+                            <p>- RM23.10</p>
+                            <p className="pt-11">- RM23.10</p>
+                            <p className="pt-12">- RM23.10</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+                  </div>
+                  
+
+                  <div className="w-1/2 ">
+                    <p className="font-bold text-xl pb-4">Recent Claims and Requests</p>
+                      <div className="flex flex-col border border-[#5C97F0] rounded-lg p-4">
+                        <div className="flex">
+                          <div>
+                            <p>Limit Increase Request</p>
+                            <p className="text-xs pt-2">23 June 2023</p>
+                          </div>
+
+                          <div className="flex w-1/2 justify-end font-bold">
+                            <p>RM 300.00</p>
+                          </div>
+                        </div>
+
+                        
+
+                        
+                      </div>
+                  </div>
+                </div>
+              
+                
+             
+      
+          </div>
+      
         <EmployeeSlide
+          open={showSlide}
           onCloseGiven={setSlideFalse}
           chartDataGiven={donutData}
         />
-        )}
     </>
     
   );
