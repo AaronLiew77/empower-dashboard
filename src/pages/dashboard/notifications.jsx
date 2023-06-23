@@ -66,16 +66,13 @@ export function Notifications() {
   };
 
   const [showSlide, setshowSlide] = useState(false);
-  const handleSlideMenu = (name) => {
-    setSelectedEmployee(name)
-    
-    setshowSlide(!showSlide)
+
+  const handleSlideMenu = () => {
+    setshowSlide(true)
     console.log("run handle")
   };
 
   const setSlideFalse = () => {
-    setSelectedEmployee(null)
-
     setshowSlide(false)
     console.log("run false handle")
   }
@@ -148,7 +145,7 @@ export function Notifications() {
                     </div>
                   </div>
                   <div className="">
-                  <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5' height="200"/>
+                    <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5' height="200"/>
                   </div>
                 </div>
 
@@ -171,11 +168,16 @@ export function Notifications() {
            
 
           </div>
-           <div className="">
+
+          <div>
             <p className="font-bold text-xl">Spending Limits</p>
             <p className="font-bold pt-2">Benefit Type: Flexi Level 2</p>
             <div className="pl-6">
-            <DonutChart data={donutData} />
+              <DonutChart data={donutData} />
+            </div>
+
+            <div className="mt-5 inline-block w-full">
+              <button onClick={handleSlideMenu} className='bg-[#1965BF] text-white py-1 px-3 font-bold w-fit rounded-xl float-right' >Edit Spending Limit</button>
             </div>
           </div>
         </div>
@@ -184,11 +186,11 @@ export function Notifications() {
        
       </div>
       {/* Bottom Graphs */}
-      {showSlide && (
         <EmployeeSlide
-          onClose={setSlideFalse}
+          open={showSlide}
+          onCloseGiven={setSlideFalse}
+          chartDataGiven={donutData}
         />
-        )}
     </>
     
   );
