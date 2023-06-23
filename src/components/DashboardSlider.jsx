@@ -146,13 +146,13 @@ export default function DashboardSlider({open, employeeName, onClose}) {
                                                                 </tr>
                                                                 <tr
                                                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                                    <td class="whitespace-nowrap px-6 py-4">Shell Petrol <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Shell Petrol <br></br> <span className='text-sm font-light text-gray-500'>10:14A.M.</span></td>
                                                                     <td class="whitespace-nowrap px-6 py-4">Petrol Allowance</td>
                                                                     <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM50.00</td>
                                                                 </tr>
                                                                 <tr
                                                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                                    <td class="whitespace-nowrap px-6 py-4">Netflix <br></br> <span className='text-sm font-light text-gray-500'>9:14P.M.</span></td>
+                                                                    <td class="whitespace-nowrap px-6 py-4">Netflix <br></br> <span className='text-sm font-light text-gray-500'>2:14P.M.</span></td>
                                                                     <td class="whitespace-nowrap px-6 py-4">Flexi Allowance</td>
                                                                     <td class="whitespace-nowrap px-6 py-4 text-red-500">-RM49.40</td>
                                                                 </tr>
