@@ -49,7 +49,6 @@ export default function DashboardSlider({employeeName, onClose}) {
                                                 onClick={() => onClose}
                                             >
                                                 <span className="sr-only">Close panel</span>
-                                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                                             </button>
                                         </div>
                                     </Transition.Child>
@@ -60,9 +59,6 @@ export default function DashboardSlider({employeeName, onClose}) {
                                             </Dialog.Title>
                                         </div>
                                         <div className="rounded-lg bg-gray-200 px-4 py-2 mx-4 mt-4">
-                                           
-
-
                                         </div>
 
                                     </div>
