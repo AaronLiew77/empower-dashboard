@@ -101,7 +101,7 @@ export function Home() {
             </div>
             <div>
               {isFundsBelowThreshold && (
-                <Typography className="text-red-500 mt-2">
+                <Typography className="text-red-500 mt-2 font-semibold">
                   Your available funds are below the threshold. Please top up to prevent disruptions of corporate cards and benefits.
                 </Typography>
               )}
