@@ -77,8 +77,8 @@ export function Home() {
   };
 
   return (
-    <div className="mt-12">
-      <div className="flex w-3/5 my-8 items-stretch">
+    <div className="">
+      <div className="flex w-full 3xl:w-3/5 my-8 items-stretch">
         <div className="w-2/3 pr-8">
           {/* Blue card */}
           <div className={`flex flex-col ${cardBackgroundColor} p-8 rounded-lg`} onClick={handleAvailableFundsClick}>
