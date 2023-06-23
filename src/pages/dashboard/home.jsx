@@ -54,14 +54,26 @@ export function Home() {
   const [availableFunds, setAvailableFunds] = useState("RM 20,800.40");
   const [cardBackgroundColor, setCardBackgroundColor] = useState("bg-[#2B69F5]");
   const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const [showSlide, setshowSlide] = useState(false);
 
+  const handleSlideMenu = (name) => {
+    setSelectedEmployee(name)
+    
+    setshowSlide(!showSlide)
+    console.log("run handle")
+  };
 
+  const setSlideFalse = () => {
+    setSelectedEmployee(null)
+
+    setshowSlide(false)
+    console.log("run false handle")
+  }
 
   const handleAvailableFundsClick = () => {
     setIsFundsBelowThreshold(true);
     setAvailableFunds("RM 2800.40");
     setCardBackgroundColor("bg-[#FBB786]")
-
   };
 
   return (
@@ -231,7 +243,7 @@ export function Home() {
                               variant="small"
                               color="blue-gray"
                               className="font-bold"
-                              onClick={() => setSelectedEmployee(name)}
+                              onClick={() => handleSlideMenu(name)}
                             >
                               {name}
                             </Typography>
@@ -253,7 +265,7 @@ export function Home() {
                                   variant="small"
                                   color="blue-gray"
                                   className="font-bold cursor-pointer"
-                                  onClick={() => setSelectedEmployee(name)}
+                                  onClick={() => handleSlideMenu(name)}
                                 >
                                   {name}
                                 </Typography>
@@ -293,10 +305,10 @@ export function Home() {
                 )}
               </tbody>
             </table>
-            {selectedEmployee && (
+            {showSlide && (
               <DashboardSlider
                 employeeName={selectedEmployee}
-                onClose={() => setSelectedEmployee(null)}
+                onClose={setSlideFalse}
               />
             )}
           </CardBody>

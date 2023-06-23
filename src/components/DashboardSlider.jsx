@@ -4,19 +4,6 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function DashboardSlider() {
     const [open, setOpen] = useState(true)
-    const [dropDown, setdropDown] = useState(false)
-
-    function dropButton() {
-        setdropDown(!dropDown)
-
-        let menu = document.getElementById("dropDownMenu")
-
-        if (dropDown) {
-            menu.style.display = "display"
-        } else {
-            menu.style.display = "none"
-        }
-    }
 
     return (
         <Transition.Root show={open} as={Fragment}>
