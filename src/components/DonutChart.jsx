@@ -19,8 +19,9 @@ const DonutChart = ({ data }) => {
         return opts.w.config.labels[opts.seriesIndex] + ': ' + val + '%';
       },
       style: {
-        fontSize: '12px',
-        colors: ['#ffffff']
+        fontSize: '14px',
+        colors: ['#90D3FD'],
+        weight: ['bold']
       },
       offsetX: 20, // Increase the horizontal offset
       offsetY: 20 // Increase the vertical offset
