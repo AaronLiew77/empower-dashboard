@@ -21,6 +21,8 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { FlagIcon, TrashIcon } from "@heroicons/react/24/solid";
+import DashboardSlider from '../../components/DashboardSlider';
+
 
 
 import { TotalCard } from "@/widgets/cards";
@@ -45,11 +47,14 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { Link } from "react-router-dom";
+import { Dashboard } from "@/layouts";
 
 export function Home() {
   const [isFundsBelowThreshold, setIsFundsBelowThreshold] = useState(false);
   const [availableFunds, setAvailableFunds] = useState("RM 20,800.40");
   const [cardBackgroundColor, setCardBackgroundColor] = useState("bg-[#2B69F5]");
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
+
 
 
   const handleAvailableFundsClick = () => {
@@ -189,7 +194,6 @@ export function Home() {
 
 
           <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
-            {/* <a href="./profile"> */}
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
@@ -214,8 +218,8 @@ export function Home() {
                 {transTableData.map(
                   ({ img, name, members, budget, completion, icon }, key) => {
                     const className = `py-3 px-5 ${key === transTableData.length - 1
-                      ? ""
-                      : "border-b border-blue-gray-50"
+                        ? ""
+                        : "border-b border-blue-gray-50"
                       }`;
 
                     return (
@@ -226,8 +230,8 @@ export function Home() {
                             <Typography
                               variant="small"
                               color="blue-gray"
-                              className="font-bold cursor-pointer"
-                              onClick={() => setSliderOpen(true)}
+                              className="font-bold"
+                              onClick={() => setSelectedEmployee(name)}
                             >
                               {name}
                             </Typography>
@@ -242,16 +246,21 @@ export function Home() {
                                   alt={name}
                                   size="xs"
                                   variant="circular"
-                                  className={`cursor-pointer border-2 border-white ${key === 0 ? "" : "-ml-2.5"}`}
+                                  className={`cursor-pointer border-2 border-white ${key === 0 ? "" : "-ml-2.5"
+                                    }`}
                                 />
-                                <Typography variant="small" color="blue-gray" className="ml-2">
+                                <Typography
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-bold cursor-pointer"
+                                  onClick={() => setSelectedEmployee(name)}
+                                >
                                   {name}
                                 </Typography>
                               </div>
                             </Tooltip>
                           ))}
                         </td>
-
                         <td className={className}>
                           <Typography
                             variant="small"
@@ -268,7 +277,6 @@ export function Home() {
                             >
                               RM{completion}
                             </Typography>
-
                           </div>
                         </td>
                         <td className={className}>
@@ -279,15 +287,20 @@ export function Home() {
                             <FlagIcon className="w-5 h-5" /> {/* Render the TrashIcon component */}
                           </Typography>
                         </td>
-
                       </tr>
                     );
                   }
                 )}
               </tbody>
             </table>
-            {/* </a> */}
+            {selectedEmployee && (
+              <DashboardSlider
+                employeeName={selectedEmployee}
+                onClose={() => setSelectedEmployee(null)}
+              />
+            )}
           </CardBody>
+
 
         </Card>
 
