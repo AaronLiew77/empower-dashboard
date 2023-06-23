@@ -89,9 +89,12 @@ export default function DashboardSlider({open, employeeName, onClose}) {
 
 
                                         <div className='flex px-4 overflow'> {/* Added 'overflow-hidden' class */}
-                                            <div className='w-1/2 rounded-xl border border-[#5C97F0]'>
-                                                <h3 className='text-md text-center font-bold mt-4 text-[#2B69F5]'>Total Utilization</h3>
-                                                <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5' />
+                                            <div className='w-1/2 rounded-xl border border-[#5C97F0] bg-[#9087FB] pb-4'>
+                                            <h3 className='text-md text-center font-bold mt-4 text-[#FFFFFF]'>Total Utilization</h3>
+                                                <div className='bg-[#FFFFFF] rounded-xl m-auto' style={{width:"78%"}}>
+                                                    <RadialBarChart chartData={chartData} label='% Utilized' color='#2B69F5' />
+                                                </div>
+
                                             </div>
                                             <div className='w-1/2 bg-[#9087FB] ml-2 rounded-xl flex flex-col p-4'>
                                                 <h3 className='text-white text-sm font-bold'>Utilized</h3>
@@ -102,17 +105,14 @@ export default function DashboardSlider({open, employeeName, onClose}) {
                                             </div>
                                         </div>
 
-                                        <div className='flex'>
-                                            <div className='w-1/2 rounded-xl border border-[#5C97F0]'>
-
+                                        <div className='flex justify-around mt-2'>
+                                            <div className='p-0' style={{width:"32%"}}>
                                                 <BenefitCard chartData={[30]} label="Petrol Allowance" />
                                             </div>
-                                            <div className='w-1/2 rounded-xl border border-[#5C97F0]'>
-
+                                            <div className='p-0' style={{width:"32%"}}>
                                                 <BenefitCard chartData={[40]} label="Gym Allowance" />
                                             </div>
-                                            <div className='w-1/2 rounded-xl border border-[#5C97F0]'>
-
+                                            <div className='p-0' style={{width:"32%"}}>
                                                 <BenefitCard chartData={[70]} label="Flexi Benefits" />
                                             </div>
                                         </div>

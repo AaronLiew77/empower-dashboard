@@ -43,6 +43,7 @@ const RadialBarChart = ({ chartData, label, color='#FF4560' }) => {
             fontFamily: 'Helvetica, Arial, sans-serif',
             color: '#333',
             offsetY: 5,
+            fontWeight: "bold",
           },
           total: {
             show: true,
