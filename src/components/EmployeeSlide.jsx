@@ -74,28 +74,18 @@ export default function EmployeeSlide({open, onCloseGiven, chartDataGiven}) {
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <p className="font-bold">Benefit Type:
                             <span className="ml-5">
-                                <button id="dropdownDefaultButton" className="bg-blue-500 text-white p-2 rounded-xl" onClick={dropButton}>Flexi Level 1</button>
-                                <div id="dropDownMenu" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                                        <li>
-                                            <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Flexi Level 1</p>
-                                        </li>
-                                        <li>
-                                            <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Flexi Level 2</p>
-                                        </li>
-                                        <li>
-                                            <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Manager - WFO</p>
-                                        </li>
-                                        <li>
-                                            <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Manager - WFH</p>
-                                        </li>
-                                        <li>
-                                            <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Custom</p>
-                                        </li>    
-                                    </ul>
-                                </div>
+                            <select name="Category" id="" className="border rounded-lg pl-2 w-fit h-7 text-sm" style={{borderColor: "#2B69F5"}}>
+                              <option value="Flexi Level 2">Flexi Level 2</option>
+                              <option value="Flexi Level 1">Flexi Level 1</option>
+                              <option value="Manager - WFO ">Manager - WFO</option>
+                              <option value="Manager - WFH ">Manager - WFH</option>
+                              <option value="Custom ">Custom</option>
+                            </select>
                             </span>
                         </p>
+
+ 
+                        
 
                         <div className="">
                           <DonutChart data={chartDataGiven} />
