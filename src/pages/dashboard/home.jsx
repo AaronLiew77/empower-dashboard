@@ -313,8 +313,6 @@ export function Home() {
               />
             )}
           </CardBody>
-
-
         </Card>
 
       </div>
