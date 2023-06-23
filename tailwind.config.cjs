@@ -7,7 +7,7 @@ module.exports = withMT({
     extend: {
       
       backgroundColor: {
-        'custom-color': '#BEC6ED',
+        'custom-color': '#E6E9F8',
         'sidenav-font-color': '#1965BF',
         'secondaryColor': '#1965BF'
       },
