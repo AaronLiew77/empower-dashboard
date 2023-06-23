@@ -14,7 +14,6 @@ import RadialBarChart from '../components/RadialBarChart';
     
 
 export default function DashboardSlider({open, employeeName, onClose}) {
-    const [open, setOpen] = useState(true)
     const chartData = [32.1]
     return (
         <Transition.Root show={open} as={Fragment}>
