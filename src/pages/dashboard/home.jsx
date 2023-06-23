@@ -305,6 +305,7 @@ export function Home() {
                 )}
               </tbody>
             </table>
+
             {showSlide && (
               <DashboardSlider
                 employeeName={selectedEmployee}
