@@ -56,10 +56,10 @@ export function Home() {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showSlide, setshowSlide] = useState(false);
   const chartData = [
-    {label: 'Petrol Allowance' , value : 40},
-    {label: 'Marketing Tools' , value : 55},
-    {label: 'Flexi Benefits' , value : 80},
-    {label: 'Health & Gym' , value : 40},
+    {label: 'Petrol Allowance' , value : 40, allowance_used : 100, allowance_limit : 220},
+    {label: 'Marketing Tools' , value : 55, allowance_used  : 200, allowance_limit : 400},
+    {label: 'Flexi Benefits' , value : 80, allowance_used : 150, allowance_limit : 180},
+    {label: 'Health & Gym' , value : 40, allowance_used  : 100, allowance_limit : 220},
   ]
 
 
