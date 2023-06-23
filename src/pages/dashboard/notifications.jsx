@@ -52,12 +52,12 @@ import {
   
 } from "@/data";
 export function Notifications() {
-  const chartData=[70]
+  const chartData=[55]
   const data = [
-    { label: 'Petrol Allowance', value: 60 },
-    { label: 'Marketing Tools', value: 40 },
-    { label: 'Flexi Benefits', value: 90 },
-    { label: 'Health & Gym', value: 30 },
+    { label: 'Petrol Allowance', value: 60, allowance_used : 150, allowance_limit : 250},
+    { label: 'Marketing Tools', value: 40, allowance_used : 100, allowance_limit : 250 },
+    { label: 'Flexi Benefits', value: 90, allowance_used : 225, allowance_limit : 250 },
+    { label: 'Health & Gym', value: 30, allowance_used : 75, allowance_limit : 250 }
   ];
 
   const donutData = {
@@ -102,7 +102,7 @@ export function Notifications() {
                     <p className="pt-3">Employee since</p>
                     <p>21 October 2021</p>
 
-                    <p className="font-bold text-sm pt-4 text-black">Benefit Type: Flexi Level 2</p>
+                    <p className="font-bold text-sm pt-4 text-black">Benefit Type: WFO - Driving</p>
                   </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export function Notifications() {
                       <div className="pt-4 text-sm">
                         <div>
                           <p>Utilized</p>
-                          <p className="font-thin">RM 321.00</p>
+                          <p className="font-thin">RM 550.00</p>
                         </div>
 
                         <div className="pt-8">
@@ -161,7 +161,7 @@ export function Notifications() {
       <div className=" flex flex-col pt-8 items-stretch">
         <div className="flex">
           <div className="w-1/2"> 
-            <p className="font-bold text-xl">Utilization Breadown</p>
+            <p className="font-bold text-xl">Utilization Breakdown</p>
             <div className="pr-8">
               <HorizontalChart data={data}/>
             </div>

@@ -63,41 +63,34 @@ export default function EmployeeSlide({open, onCloseGiven, chartDataGiven}) {
                         <p className="font-bold">Benefit Type:
                             <span className="ml-5">
                             <select name="Category" id="" className="border rounded-lg pl-2 w-fit h-7 text-sm" style={{borderColor: "#2B69F5"}}>
-                              <option value="Flexi Level 2">Flexi Level 2</option>
-                              <option value="Flexi Level 1">Flexi Level 1</option>
-                              <option value="Manager - WFO ">Manager - WFO</option>
-                              <option value="Manager - WFH ">Manager - WFH</option>
+                              <option value="Flexi Level 2">WFO - Driving</option>
+                              <option value="Flexi Level 1">WFO - Public Transport</option>
+                              <option value="Manager - WFO ">WFH - Parents</option>
+                              <option value="Manager - WFH ">WFO - Parents</option>
                               <option value="Custom ">Custom</option>
                             </select>
                             </span>
                         </p>
 
- 
-                        
-
-                        <div className="">
+                        <div className="mt-5">
                           <DonutChart data={chartDataGiven} />
                         </div>
 
                         <div className="mt-8">
-                            <p className=' text-[#1965BF] inline-block'>Simple label</p>
-                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                            <p className=' text-[#1965BF] inline-block'>Petrol Allowance</p>
+                            <input defaultValue="RM 250" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
                         </div>
                         <div className="mt-8">
-                            <p className=' text-[#1965BF] inline-block'>Marketing Tool</p>
-                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                            <p className=' text-[#1965BF] inline-block'>Marketing Tools</p>
+                            <input defaultValue="RM 250" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
                         </div>
                         <div className="mt-8">
                             <p className=' text-[#1965BF] inline-block'>Flexi Benefits</p>
-                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                            <input defaultValue="RM 250" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
                         </div>
                         <div className="mt-8">
                             <p className=' text-[#1965BF] inline-block'>Health & Gym</p>
-                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
-                        </div>
-                        <div className="mt-8">
-                            <p className=' text-[#1965BF] inline-block'>Health & Gym</p>
-                            <input defaultValue="RM 300" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
+                            <input defaultValue="RM 250" className="border rounded-lg text-lg inline-block float-right px-1" style={{borderColor: "#2B69F5"}} type="text" />
                         </div>
 
                         <div className="mt-5 inline-block w-full">
