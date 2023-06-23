@@ -26,7 +26,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
     <aside
       className={`${sidenavTypes[sidenavType]} ${
         openSidenav ? "translate-x-0" : "-translate-x-80"
-      } fixed inset-0 z-1 my-4 ml-4 h-[calc(100vh-32px)] w-64 rounded-xl transition-transform duration-300 xl:translate-x-0`}
+      } fixed inset-0 z-1 w-64 h-screen transition-transform duration-300 xl:translate-x-0`}
     >
       <div
         className={`relative border-b ${
@@ -81,7 +81,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                         isActive
                           ? sidenavColor
                           : sidenavType === "dark"
-                          ? "white"
+                          ? "dark-blue"
                           : "blue-gray"
                       }
                       className="flex items-center gap-4 px-4 capitalize"   

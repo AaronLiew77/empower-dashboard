@@ -84,7 +84,7 @@ export function Home() {
   };
 
   return (
-    <div className="">
+    <div className="pr-8">
       <div className="flex w-full 3xl:w-3/5 my-8 items-stretch">
         <div className="w-2/3 pr-8">
           {/* Blue card */}
